@@ -2,7 +2,7 @@
 
 @include 'db_connect.php';
 
-if (isset($_POST['submit'])) {
+if (isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
 
    $name = strtolower(mysqli_real_escape_string($conn, $_POST['name']));
    $email = mysqli_real_escape_string($conn, $_POST['email']);
