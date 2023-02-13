@@ -2,7 +2,7 @@
 
 @include 'db_connect.php';
 
-if (isset($_POST['submit'])) {
+if (isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
 
    $name = mysqli_real_escape_string($conn, $_POST['name']);
    $pass = md5($_POST['password']);
